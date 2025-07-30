@@ -2,17 +2,17 @@ const posts = [
   {
     id: 1,
     title: "React Basics",
-    author: { id: 1, name: "John Doe" },
+    author: { id: 1, name: "Rabib" },
     content: "This is a sample post about React.",
     comments: [
       {
         id: 101,
-        author: "Alice",
+        author: "turjo",
         text: "Great intro!",
       },
       {
         id: 102,
-        author: "Bob",
+        author: "Nridul",
         text: "Very helpful, thanks!",
       },
     ],
@@ -20,12 +20,12 @@ const posts = [
   {
     id: 2,
     title: "Understanding Props",
-    author: { id: 2, name: "Jane Smith" },
+    author: { id: 2, name: "rakey" },
     content: "This post explains props in React.",
     comments: [
       {
         id: 201,
-        author: "Charlie",
+        author: "emon",
         text: "Props are so useful!",
       },
     ],
@@ -33,19 +33,19 @@ const posts = [
   {
     id: 3,
     title: "Hooks Overview",
-    author: { id: 1, name: "John Doe" },
+    author: { id: 1, name: "Dip" },
     content: "An introduction to React Hooks.",
     comments: [],
   },
   {
     id: 4,
     title: "JSX Explained",
-    author: { id: 3, name: "Emily Rose" },
+    author: { id: 3, name: "Anadi" },
     content: "Understanding JSX in React.",
     comments: [
       {
         id: 401,
-        author: "David",
+        author: "naima",
         text: "Clear explanation!",
       },
     ],
@@ -53,17 +53,17 @@ const posts = [
   {
     id: 5,
     title: "State and Props",
-    author: { id: 2, name: "Jane Smith" },
+    author: { id: 2, name: "Esteak" },
     content: "Managing data in components.",
     comments: [
       {
         id: 501,
-        author: "Eva",
+        author: "sakin",
         text: "State makes components dynamic!",
       },
       {
         id: 502,
-        author: "Frank",
+        author: "roxy",
         text: "Good post, thanks!",
       },
     ],
