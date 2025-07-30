@@ -14,89 +14,127 @@ export default function Post({ post }) {
   return (
     <div
       style={{
-        backgroundColor: '#fff',
+        backgroundColor: '#fdfdfd',
         border: '1px solid #ddd',
-        borderRadius: 12,
-        padding: 24,
-        marginBottom: 40,
-        boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px',
+        borderRadius: '12px',
+        padding: '24px',
+        marginBottom: '40px',
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
       {/* Post Title & Content */}
-      <div style={{ borderBottom: '1px solid #eee', paddingBottom: 10 }}>
-        <h2 style={{ color: '#222', marginBottom: 10 }}>{post.title}</h2>
-        <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#444' }}>{post.content}</p>
+      <div
+        style={{
+          backgroundColor: '#f7f7f7',
+          borderRadius: '8px',
+          padding: '16px',
+          marginBottom: '20px',
+        }}
+      >
+        <h2 style={{ color: '#2c3e50' }}>{post.title}</h2>
+        <p style={{ color: '#4d4d4d', lineHeight: '1.6' }}>{post.content}</p>
       </div>
 
       {/* Author Info */}
-      <div style={{ borderBottom: '1px solid #eee', paddingBottom: 10 }}>
-        <strong style={{ fontSize: '14px', color: '#777' }}> Author: </strong>
-        <Link to={`/author/${post.author.id}`} style={{ color: '#0056b3', textDecoration: 'none', fontWeight: 'bold' }}>
+      <div
+        style={{
+          backgroundColor: '#eef1f5',
+          borderRadius: '8px',
+          padding: '12px 16px',
+          marginBottom: '20px',
+        }}
+      >
+        <strong style={{ color: '#555' }}>Author: </strong>
+        <Link
+          to={`/author/${post.author.id}`}
+          style={{
+            color: '#1a73e8',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+          }}
+        >
           {post.author.name}
         </Link>
       </div>
 
       {/* Post Reactions */}
-      <div style={{ backgroundColor: '#f5faff', padding: 12, borderRadius: 8 }}>
-        <h4 style={{ marginBottom: 8, color: '#0077cc' }}> Post Reactions</h4>
+      <div
+        style={{
+          backgroundColor: '#f0f4f8',
+          borderRadius: '8px',
+          padding: '12px 16px',
+          marginBottom: '20px',
+        }}
+      >
+        <h4 style={{ color: '#333', marginBottom: 8 }}>Post Reactions</h4>
         <Reaction />
       </div>
 
-      {/* Comments Section */}
-      <div style={{ backgroundColor: '#fdfdfd', padding: 16, borderRadius: 8, border: '1px solid #eaeaea' }}>
-        <h4 style={{ marginBottom: 12, color: '#333' }}> Comments</h4>
+      {/* Comments */}
+      <div
+        style={{
+          backgroundColor: '#f8f9fa',
+          borderRadius: '8px',
+          padding: '16px',
+          marginBottom: '20px',
+        }}
+      >
+        <h4 style={{ marginBottom: 10, color: '#333' }}>Comments</h4>
 
-        {post.comments.length === 0 && <p>No comments yet.</p>}
+        {post.comments.length === 0 && <p style={{ color: '#666' }}>No comments yet.</p>}
 
         {post.comments.map((comment) => (
           <div
             key={comment.id}
             style={{
-              borderTop: '1px solid #e0e0e0',
-              paddingTop: 10,
-              marginTop: 10,
-              paddingLeft: 8,
+              backgroundColor: '#ffffff',
+              border: '1px solid #e0e0e0',
+              borderRadius: '6px',
+              padding: '10px',
+              marginTop: '10px',
             }}
           >
             <p style={{ margin: 0 }}>
               <strong>{comment.author}</strong>: {comment.text}
             </p>
-            <div style={{ marginTop: 4 }}>
-              <span style={{ fontSize: '14px' }}> Reactions:</span> <Reaction />
+            <div style={{ marginTop: 6 }}>
+              <span style={{ fontSize: '14px' }}>Reactions:</span> <Reaction />
             </div>
           </div>
         ))}
       </div>
 
-      {/* Comment Input Section */}
-      <div style={{ marginTop: 10 }}>
-        <h4 style={{ color: '#333' }}> Add a Comment</h4>
+      {/* Comment Input */}
+      <div
+        style={{
+          backgroundColor: '#f7f7f7',
+          borderRadius: '8px',
+          padding: '16px',
+        }}
+      >
+        <h4 style={{ marginBottom: 10, color: '#333' }}>Add a Comment</h4>
         <textarea
-          placeholder="Type your comment here..."
+          placeholder="Write your comment..."
           value={commentText}
           onChange={(e) => setCommentText(e.target.value)}
           rows={3}
           style={{
             width: '100%',
-            padding: 10,
-            borderRadius: 8,
+            padding: '10px',
+            borderRadius: '6px',
             border: '1px solid #ccc',
             resize: 'vertical',
-            marginTop: 8,
+            marginBottom: '10px',
           }}
         />
         <button
           onClick={handleCommentSubmit}
           style={{
-            marginTop: 10,
             padding: '8px 16px',
-            backgroundColor: '#28a745',
+            backgroundColor: '#2c7be5',
             color: 'white',
             border: 'none',
-            borderRadius: 6,
+            borderRadius: '6px',
             cursor: 'pointer',
             fontWeight: 'bold',
           }}
