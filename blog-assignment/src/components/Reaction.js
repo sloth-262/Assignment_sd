@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const reactions = ['BuraAngul', 'Valobasa', 'Hehehehe', 'uauuuuu', 'kostoPaichi'];
+const reactions = ['LIKE', 'LOVE', 'HAHA', 'WOW', 'SAD'];
 
 export default function Reaction() {
   const [selected, setSelected] = useState(null);
