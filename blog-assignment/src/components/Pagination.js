@@ -1,22 +1,23 @@
 import React from "react";
 
-export default function Pagination({ currentPage, totalPages, onPageChange }) {
-  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
-
+export default function Pagination({ totalPages, currentPage, onPageChange }) {
   return (
     <div style={{ marginTop: 20 }}>
-      {pages.map((page) => (
+      {Array.from({ length: totalPages }, (_, i) => (
         <button
-          key={page}
-          onClick={() => onPageChange(page)}
+          key={i}
+          onClick={() => onPageChange(i + 1)}
           style={{
-            margin: "0 5px",
-            padding: "5px 10px",
+            margin: 5,
+            padding: 8,
+            backgroundColor: currentPage === i + 1 ? "#007bff" : "#eee",
+            color: currentPage === i + 1 ? "white" : "black",
+            border: "none",
+            borderRadius: 4,
             cursor: "pointer",
-            fontWeight: page === currentPage ? "bold" : "normal",
           }}
         >
-          {page}
+          {i + 1}
         </button>
       ))}
     </div>

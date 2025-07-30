@@ -1,25 +1,23 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const icons = ["👍", "❤️", "😂"];
+const reactions = ['BuraAngul', 'Valobasa', 'Hehehehe', 'uauuuuu', 'kostoPaichi'];
 
 export default function Reaction() {
-  const [active, setActive] = useState(null);
+  const [selected, setSelected] = useState(null);
 
   return (
-    <div>
-      {icons.map((icon, index) => (
+    <div style={{ display: 'flex', gap: 10, marginTop: 5 }}>
+      {reactions.map((emoji, index) => (
         <span
           key={index}
+          onClick={() => setSelected(index)}
           style={{
-            fontSize: "20px",
-            margin: "0 5px",
-            cursor: "pointer",
-            opacity: active === index ? 1 : 0.4,
-            userSelect: "none",
+            fontSize: 20,
+            cursor: 'pointer',
+            opacity: selected === index ? 1 : 0.4,
           }}
-          onClick={() => setActive(index)}
         >
-          {icon}
+          {emoji}
         </span>
       ))}
     </div>
